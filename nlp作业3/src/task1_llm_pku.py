@@ -11,7 +11,7 @@ from openai import OpenAI
 # 替换为你的 API_KEY 和 API_BASE_URL
 API_KEY = "sk-9bc1c11d39214f268fa4c628361528ee" 
 BASE_URL = "https://api.deepseek.com" # 示例: DeepSeek 的 Base URL
-MODEL_NAME = "deepseek-reasoner" # 示例: 模型名称
+MODEL_NAME = "deepseek-chat" # 示例: 模型名称
 # ----------------------------------------
 
 client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
@@ -20,7 +20,7 @@ def segment_sentence_with_llm(sentence):
     """
     调用大语言模型进行分词
     """
-    prompt = f"你是一流的中文语言学专家。请对下面的句子进行中文分词，词与词之间请用空格隔开，保留所有标点符号。不要输出任何解释性的废话，只输出分词后的纯文本结果。\n\n句子：{sentence}"
+    prompt = f"你是一流的中文语言学专家。请对下面的句子按照以下示例进行中文分词，要注意中国人名的姓和名分开，例如“钱其琛”解析成“钱 其琛”，还有复合词也要切分，另外数次和两次也分开，例如“1月份”切分成“1 月份”。词与词之间请用空格隔开，保留所有标点符号。不要输出任何解释性的废话，每个分词后也不要有斜杠和词性，只输出分词后的纯文本结果。\n\n句子：{sentence}"
     
     try:
         response = client.chat.completions.create(
@@ -87,7 +87,7 @@ def main():
     }
     
     # 将完整结果存入文件中
-    output_comparison_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', f'comparison_result_{MODEL_NAME}.json')
+    output_comparison_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', f'better_prompt_result_{MODEL_NAME}.json')
     with open(output_comparison_file, 'w', encoding='utf-8') as f:
         json.dump(final_output, f, ensure_ascii=False, indent=4)
     print(f"\n✅ 详细分词对比结果及评测指标已保存至: {output_comparison_file}")
