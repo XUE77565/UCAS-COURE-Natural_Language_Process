@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.12.9)  20 MAY 2026 00:03
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.12.9)  20 MAY 2026 09:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1958,19 +1958,29 @@ Overfull \hbox (23.34314pt too wide) in paragraph at lines 173--175
  \TU/lmr/m/n/10 comparison_result_deepseek-reasoner.json
  []
 
-[2] [3] (main.aux)
+[2]
+Overfull \hbox (170.46126pt too wide) in paragraph at lines 225--227
+[]\TU/SimSun(0)/m/n/10 在 这 一 部 分 中，|  我 采 用 了 \TU/lmr/m/n/10 https://github.com
+/guhhhhaa/4675-scifi \TU/SimSun(0)/m/n/10 中 的 科 幻 小 说  |《流 浪 地 球》|  和 \TU/lmr/m
+/n/10 https://huggingface.co/datasets/0xDing/wikipedia-
+ []
+
+[3]
+File: fig/model_comparison.png Graphic file (type bmp)
+<fig/model_comparison.png>
+ [4] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 47910 strings out of 402987
- 1178584 string characters out of 5448524
- 2051581 words of memory out of 5000000
- 75992 multiletter control sequences out of 15000+600000
+ 47943 strings out of 402987
+ 1180270 string characters out of 5448524
+ 2079584 words of memory out of 5000000
+ 76024 multiletter control sequences out of 15000+600000
  634610 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 108i,5n,126p,547b,1436s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,6n,126p,547b,1725s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (3 pages).
+Output written on main.pdf (4 pages).

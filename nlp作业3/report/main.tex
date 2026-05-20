@@ -222,4 +222,53 @@ DeepSeed-Chat的结果提升到了
 \end{lstlisting}
 另外，为了也可以将标准答案作为语料喂给大模型进行学习，来达到我们想要的分词效果.
 \subsection{对百度百科的分词效果}
+在这一部分中，我采用了https://github.com/guhhhhaa/4675-scifi中的科幻小说《流浪地球》和
+https://huggingface.co/datasets/0xDing/wikipedia-cn-20230720-filtered/中的维基百科进行分词测试，
+我原本来向也将百度贴吧中的对话作为语料输入，但是噪声实在是太大，遂放弃\par
+
+在这个实验中，我用jieba作为标准答案，最终得到的结果如下, 科幻小说的分词结果如下
+\begin{lstlisting}
+        "metrics": 
+            "precision": 0.8693,
+            "recall": 0.8537,
+            "f1_score": 0.8606
+\end{lstlisting}
+维基百科的分词结果如下
+\begin{lstlisting}
+        "metrics": 
+            "precision": 0.7093,
+            "recall": 0.6867,
+            "f1_score": 0.6926
+\end{lstlisting}
+我们可以看到，chat的分词结果在科幻小说中更和jieba相似。但是我观察分词的比对结果发现，和上一个任务相同，
+依然有很多“假错误”，例如科幻小说中的
+\begin{lstlisting}
+    "原句": "“重元素聚变是一门很深的学问，现在给你们还讲不明白。",
+    "参考标准答案(Jieba)": "“ 重元素 聚变 是 一门 很深 的 学问 ， 现在 给 你们 还 讲 不 明白 。",
+    "deepseek-chat预测": "重元素 聚变 是 一门 很 深 的 学问 ， 现在 给 你们 还 讲 不 明白 。"
+\end{lstlisting}
+\bigskip\bigskip
+\begin{lstlisting}
+    "原句": "小星老师让我们戴上氧气面罩。",
+    "参考标准答案(Jieba)": "小 星 老师 让 我们 戴上 氧气 面罩 。",
+    "deepseek-chat预测": "小星 老师 让 我们 戴上 氧气面罩 。"
+\end{lstlisting}
+第一个例子只是对于副词和形容词的整体和细化切分偏好不同，第二个甚至chat预测的更符合我们日常的语言。因此这里的分数并不能完全代表chat的分词准确性，
+在维基百科语料中也是如此，例如
+\begin{lstlisting}
+    "原句": "傅忠，明朝驸马都尉，宿州人，明太祖第九女寿春公主的丈夫。",
+    "参考标准答案(Jieba)": "傅忠 ， 明朝 驸马 都尉 ， 宿州 人 ， 明太祖 第九 女寿春 公主 的 丈夫 。",
+    "deepseek-chat预测": "傅忠 ， 明朝 驸马都尉 ， 宿州人 ， 明太祖 第九女 寿春公主 的 丈夫 。"
+\end{lstlisting}
+由于维基百科中的专有名词更多，所以这种偏好的差异更大，因此和所谓的预测正确性更低\par
+综合上述结果，我们发现在合适的prompt下，大语言模型可以比较出色的完成分词的任务，但是对于一些特定的任务，如果我们需要得到某种
+特定的分词结果，还是需要通过更改prompt或者进行预训练来达到我们想要的效果
+\subsection{模型预测准确性对比图}
+根据我们之前的实验结果，这里面仅仅代表和我们评测数据集的分词标准的相似程度，并不完全代表模型的分词准确性，
+但是我们可以通过这个图来比较一下不同大模型在分词任务上的表现，以下是我根据之前的结果绘制的直方图
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{fig/model_comparison.png}
+    \caption{不同大模型在分词任务上的性能直方图对比}
+\end{figure}
 \end{document}
