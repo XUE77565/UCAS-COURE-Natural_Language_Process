@@ -1,0 +1,84 @@
+                     国科大-宗成庆-自然语⾔处理
+
+VS                   “P “ 20
+    (1)
+    (2)           V
+    (3)
+                        acomnad               command a
+
+                                   MT
+
+                             .n .
+
+    (4) ANB                              T
+
+               ⎡ POS = NN ⎤           ⎡ Lex = boy ⎤
+
+         A  =  ⎢  Lex = boy  ⎥  B  =  ⎢  Num  =  Single  ⎥
+               ⎢             ⎥        ⎢                  ⎥
+
+               ⎢⎣Sem = Agent⎥⎦        ⎢⎣Case = Subject⎥⎦
+
+                  A∪B =?
+
+    (5) y            ”I study English every day.”              3r      (Tri-grams)
+                                                                          T
+cS “P “ 10 :
+                                                                       /VV /PU
+               V                i                                        /VV /PU
+                                                                          os
+                                         m                     t
+
+    Sh               “P “ 15 T
+
+1.          VT
+
+    2013             d
+
+                                      P                  T
+
+    2013 /NT                 /NN d /NN /NN                     /JJ
+
+                                                 T
+
+2013/QQ /AA /NN d /NN /NN /AA /ML
+
+                                N                F1 p
+
+2.                1                                         “       L
+
+    PT
+                    #o s
+
+                               os           T
+
+              T
+
+   o          GA ; ;:          = ;A D; 5 )
+
+   o                ; ;:       = ;A D; )
+
+o         :;C;A:;A         GD  #
+
+S         “P“                  T
+
+              .3(
+
+   Vv                                    P
+   a
+   e( 2D C         T           “( 1                     (1
+   e ( 2D C        b(             (            MM
+                                     (1
+      (1              (1          (                       “T
+   b( G               “(
+                      (2
+          Te       b“
+
+   U
+
+2 D ;D                  y          ;D x        ,= D
+ ,= D Ng         ;A:                           V
+                 t
+yul                                                V
+                                                   P
+
